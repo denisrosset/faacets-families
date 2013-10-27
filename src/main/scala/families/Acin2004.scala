@@ -42,6 +42,6 @@ object Acin2004 extends PaperInDatabase {
     }
     P *= 8
     P :-= ineqbound
-    Bra(s, FRepr, P.toImmutable) <= 0
+    Bra(s, FRepr, P.toImmutable) // <= 0
   }
 }

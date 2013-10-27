@@ -69,27 +69,27 @@ object CollinsGisin2004 extends PaperInDatabase {
   val ICHSH = Bra(Scenario("{[2 2] [2 2]}"), NGRepr, alg.immutable.QVector(
      0, -1,  0,
     -1,  1,  1,
-     0,  1, -1)) <= 0
+     0,  1, -1)) // <= 0
 
   val I3322 = Bra(Scenario("{[2 2 2] [2 2 2]}"), NGRepr, alg.immutable.QVector(
      0, -1,  0,  0,
     -2,  1,  1,  1,
     -1,  1,  1, -1,
-     0,  1, -1,  0)) <= 0
+     0,  1, -1,  0)) // <= 0
 
   val I4422 = Bra(Scenario("{[2 2 2 2] [2 2 2 2]}"), NGRepr, alg.immutable.QVector(
      0, -1,  0,  0,  0,
     -3,  1,  1,  1,  1,
     -2,  1,  1,  1, -1,
     -1,  1,  1, -1,  0,
-     0,  1, -1,  0,  0)) <= 0
+     0,  1, -1,  0,  0)) // <= 0
 
   val I2233 = Bra(Scenario("{[3 3] [3 3]}"), NGRepr, alg.immutable.QVector(
      0, -1, -1,  0,  0,
     -1,  1,  1,  0,  1,
     -1,  1,  0,  1,  1,
      0,  0,  1,  0, -1,
-     0,  1,  1, -1, -1)) <= 0
+     0,  1,  1, -1, -1)) // <= 0
 
   val I2244 = Bra(Scenario("{[4 4] [4 4]}"), NGRepr, alg.immutable.QVector(
      0, -1, -1, -1,  0,  0,  0,
@@ -98,5 +98,5 @@ object CollinsGisin2004 extends PaperInDatabase {
     -1,  1,  0,  0,  1,  1,  1,
      0,  0,  0,  1,  0,  0, -1,
      0,  0,  1,  1,  0, -1, -1,
-     0,  1,  1,  1, -1, -1, -1)) <= 0
+     0,  1,  1,  1, -1, -1, -1)) // <= 0
 }

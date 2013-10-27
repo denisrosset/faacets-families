@@ -26,7 +26,7 @@ object BancalReader {
     val ineqs = for(line <- source.getLines().toArray) yield {
       val res = BancalLineParser.parse(BancalLineParser.line(d), line)
       if (res.successful)
-        Some(Bra(scenario, NGRepr, alg.immutable.QVector(res.get.map(Rational(_)).toArray)) <= 0)
+        Some(Bra(scenario, NGRepr, alg.immutable.QVector(res.get.map(Rational(_)).toArray))) // <= 0
       else
         None
     }

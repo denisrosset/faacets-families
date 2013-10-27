@@ -58,7 +58,7 @@ object Sliwa2003 extends PaperInDatabase {
     "8 <> - 3<A1> - <A2> - 2<A1B1> + 2<A2B1> - <A1B2> + <A2B2> - 2<A1C1> + 2<A2C1> + 2<B1C1> - 2<A1B1C1> - 2<A2B1C1> + 2<B2C1>-2<A1B2C1>-2<A2B2C1>-<A1C2>+<A2C2>+2<B1C2>- 2<A1B1C2> - 2<A2B1C2> - 2<B2C2> + 3<A1B2C2> + <A2B2C2>",
     "10 <> - 3<A1> - <A2> - 3<B1> + 2<A1B1> + <A2B1> - <B2> + <A1B2> + 2<A2B2> - 2<A1C1> + 2<A2C1> - <B1C1> + 3<A1B1C1> - 4<A2B1C1> - <B2C1> + <A1B2C1> - 2<A2B2C1> - <A1C2> - <A2C2> - 2<B1C2> + 3<A1B1C2> + <A2B1C2> + 2<B2C2> - 4<A1B2C2> - 2<A2B2C2>")
 
-  val families = exprs.map( expr => (VecParser.parse(VecParser.bra(s), expr).get >= 0 ) )
+  val families = exprs.map( expr => (-VecParser.parse(VecParser.bra(s), expr).get) ) // <= 0
   def inequalities = for (i <- 0 until 46) yield ((s"${i+1}", Inequality(
       bra = families(i),
       localBound = Some(Rational.zero),

@@ -13,18 +13,18 @@ object Wu2013 {
   import alg.immutable.QVector
   object Example1 {
     val s = Scenario(Vector(Vector(2,2,2),Vector(2,2,2)))
-    val b1 = Bra(s, NCRepr, QVector(-2,0,0,0,  0,0,1,-1,  0,0,1,1,  0,0,0,0)) <= 0
-    val b2 = Bra(s, NCRepr, QVector(-2,0,0,0,  0,0,0,0,  0,-1,0,1,  0,-1,0,-1)) <= 0
-    val b3 = Bra(s, NCRepr, QVector(-2,0,0,0,  0,0,0,0,  0,1,1,0,  0,1,-1,0)) <= 0
+    val b1 = Bra(s, NCRepr, QVector(-2,0,0,0,  0,0,1,-1,  0,0,1,1,  0,0,0,0)) // <= 0
+    val b2 = Bra(s, NCRepr, QVector(-2,0,0,0,  0,0,0,0,  0,-1,0,1,  0,-1,0,-1)) // <= 0
+    val b3 = Bra(s, NCRepr, QVector(-2,0,0,0,  0,0,0,0,  0,1,1,0,  0,1,-1,0)) // <= 0
     def i = extend(List(b1,b2,b3))
   }
 
   object Example2 {
     val s = Scenario(Vector(Vector(2,2,2,2)))
-    val b1 = Bra(s, NCRepr, QVector(-3, 0, 2, 1, 0)) <= 0
-    val b2 = Bra(s, NCRepr, QVector(-3, -1, 1, 0, -1)) <= 0
-    val b3 = Bra(s, NCRepr, QVector(-3, -1, 1, 0, 1)) <= 0
-    val b4 = Bra(s, NCRepr, QVector(-3, 0, 1, 2, 0)) <= 0
+    val b1 = Bra(s, NCRepr, QVector(-3, 0, 2, 1, 0)) // <= 0
+    val b2 = Bra(s, NCRepr, QVector(-3, -1, 1, 0, -1)) // <= 0
+    val b3 = Bra(s, NCRepr, QVector(-3, -1, 1, 0, 1)) // <= 0
+    val b4 = Bra(s, NCRepr, QVector(-3, 0, 1, 2, 0)) // <= 0
     def i = extend(List(b1,b2,b3,b4))
   }
 
@@ -58,6 +58,6 @@ object Wu2013 {
         coeff(i + d*j) += b(i)*c(j)
     }
     coeff(0) = -2*l
-    Bra(Scenario(s.parties ++ Vector(Party(Vector.fill[Int](n)(2)))), NCRepr, coeff.toImmutable) <= 0
+    Bra(Scenario(s.parties ++ Vector(Party(Vector.fill[Int](n)(2)))), NCRepr, coeff.toImmutable) // <= 0
   }
 }

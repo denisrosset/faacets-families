@@ -41,7 +41,7 @@ object AcinCGLMP2005 extends PaperInDatabase {
     }
     beta *= 4
     beta :-= (d - 1)
-    Bra(s, FRepr, beta.toImmutable) >= 0
+    Bra(s, FRepr, -beta.toImmutable) // <= 0
   }
 }
 
@@ -106,6 +106,6 @@ object CGLMP2002 extends PaperInDatabase {
     }
     beta *= 4
     beta :-= ineqbound
-    Bra(s, FRepr, beta.toImmutable) <= 0
+    Bra(s, FRepr, beta.toImmutable) // <= 0
   }
 }

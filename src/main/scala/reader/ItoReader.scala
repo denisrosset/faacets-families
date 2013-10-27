@@ -29,7 +29,7 @@ object ItoReader extends Reader {
         for (a <- 0 until mA; b <- 0 until mB)
           coeffs((b + 1) * (mA + 1) + a + 1) = c2(a * mB + b)
         val s = Scenario(Vector(Vector.fill(mA)(2), Vector.fill(mB)(2)))
-        (name, Bra(s, NGRepr, coeffs.toImmutable) <= 0)
+        (name, Bra(s, NGRepr, coeffs.toImmutable)) // <= 0
       }
     }
     def content = rep(inequality)

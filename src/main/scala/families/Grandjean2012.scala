@@ -30,7 +30,7 @@ object Grandjean2012 extends PaperInDatabase {
     val bound = k - 1
     P *= 8
     P :-= bound
-    Bra(s, FRepr, P.toImmutable) >= 0
+    Bra(s, FRepr, -P.toImmutable) // <= 0
   }
 
   def eq18(k: Int) = {
@@ -61,7 +61,7 @@ object Grandjean2012 extends PaperInDatabase {
     val bound = 2
     P *= 8
     P :-= bound
-    Bra(s, FRepr, P.toImmutable) >= 0
+    Bra(s, FRepr, -P.toImmutable) // <= 0
   }
 
   def b1(k: Int) = {
@@ -91,7 +91,7 @@ object Grandjean2012 extends PaperInDatabase {
     val bound = 6*(k - 1)
     P *= 8
     P :-= bound
-    Bra(s, FRepr, P.toImmutable) >= 0
+    Bra(s, FRepr, -P.toImmutable) // <= 0
   }
 
   import scala.util.parsing.combinator._
@@ -140,7 +140,7 @@ object Grandjean2012 extends PaperInDatabase {
       P *= 4
       P :-= bound
     }
-    Bra(s, FRepr, P.toImmutable) <= 0
+    Bra(s, FRepr, P.toImmutable) // <= 0
   }
   def a = List(a1, a2, a3, a4, a5, a6, a7, a8, a9)
   def a1 = parse("E(2|000) - E(1|001) - E(1|011) - E(2|011) + 2E(2|111) + sym <= 0")
@@ -171,7 +171,7 @@ object Grandjean2012 extends PaperInDatabase {
         P(I(a,1,b,1,c,1)) += 2
       }
     }
-    Bra(s, FRepr, P.toImmutable) <= 0
+    Bra(s, FRepr, P.toImmutable) // <= 0
   }
 
   def inequalities = (for (k <- 2 to 3) yield ((s"Eq1_$k", Inequality(
